@@ -1,0 +1,26 @@
+.nav-fill{
+  background-color: #1ba784;
+}
+
+a:link, a:visited{
+  color: white;
+  padding: 16px 25px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.navbar-brand{
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 25px;
+}
+
+a:hover, a:active{
+  background-color: #253d24;
+}
+
+

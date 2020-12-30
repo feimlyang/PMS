@@ -1,0 +1,135 @@
+<div class="container" *ngIf="!selectedPatient">
+  <h2>Invalid Insurance Number</h2>
+</div>
+
+<div class="container" *ngIf="selectedPatient">
+  <h4> Information of Patient</h4>
+
+  <table class="table table-bordered table-striped">
+    <tbody>
+    <tr>
+      <th scope="col">
+        Insurance Num:
+      </th>
+      <td>
+        {{ selectedPatient.insuranceNum }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="col">
+        Fist Name:
+      </th>
+      <td>
+        {{ selectedPatient.firstName }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="col">
+        Last Name:
+      </th>
+      <td>
+        {{ selectedPatient.lastName }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="col">
+        Address:
+      </th>
+      <td>
+        {{ selectedPatient.address }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="col">
+        Phone Number:
+      </th>
+      <td>
+        {{ selectedPatient.phone }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="col">
+        Birth Date:
+      </th>
+      <td>
+        {{ selectedPatient.birthDate }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="col">
+        Gender:
+      </th>
+      <td>
+        {{ selectedPatient.gender }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="col">
+        Marital:
+      </th>
+      <td>
+        {{ selectedPatient.marital }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="col">
+        External Doctor Id:
+      </th>
+      <td>
+        {{ selectedPatient.externalDocId }}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <h4> Information of Patient’next-of-kin</h4>
+  <table class="table table-bordered table-striped">
+  <tbody>
+  <tr>
+    <th scope="col">
+      First Name:
+    </th>
+    <td>
+      {{ selectedPatient.nokfirstName }}
+    </td>
+  </tr>
+  <tr>
+    <th scope="col">
+      Last Name:
+    </th>
+    <td>
+      {{ selectedPatient.noklastName }}
+    </td>
+  </tr>
+  <tr>
+    <th scope="col">
+      Relationship:
+    </th>
+    <td>
+      {{ selectedPatient.nokrelationship }}
+    </td>
+  </tr>
+  <tr>
+    <th scope="col">
+      Address:
+    </th>
+    <td>
+      {{ selectedPatient.nokaddress }}
+    </td>
+  </tr>
+  <tr>
+    <th scope="col">
+      Phone Number:
+    </th>
+    <td>
+      {{ selectedPatient.nokphone }}
+    </td>
+  </tr>
+  </tbody>
+  </table>
+
+</div>
+
+
+

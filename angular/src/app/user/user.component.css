@@ -1,0 +1,44 @@
+body{
+  background-color: #c4d7d6;
+  margin-top: 20px;
+  width: 80%;
+  height: 1000px;
+  top: 61px;
+  position: absolute;
+
+}
+
+.container{
+  margin-top: 15px;
+}
+
+.container h4{
+  font-weight: bolder;
+}
+
+.container h5{
+  font-weight: bold;
+  color: #2d2e36;
+}
+
+
+.add{
+  float: left;
+  width: 40%;
+  margin-top: 25px;
+  margin-left: 100px;
+}
+
+.add button{
+
+  border-radius: 40px;
+  background-color: white;
+  height: 45px;
+  border: none;
+  width: 175px;
+  font-weight: bold;
+  color: #de7622;
+  font-size: 20px;
+}
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<div class="container_request">
+  <form [formGroup]="requestForm" (ngSubmit)="submitRequest()">
+    <div class="form-group col-md-6">
+      <label for="insuranceNum">Patient's Insurance Number:</label>
+      <input type="text" class="form-control form-control-sm" id="insuranceNum" formControlName="insuranceNum" required>
+      <div [hidden]="insuranceNum.pristine || insuranceNum.valid"
+           class="alert alert-danger">
+        Insurance Number is a 9 digits number.
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="comment">Comment:</label>
+      <input type="text" class="form-control form-control-sm" id="comment" formControlName="comment" required>
+      <div [hidden]="comment.pristine || comment.valid"
+           class="alert alert-danger">
+        Comment for request is required.
+      </div>
+    </div>
+
+
+    <div [ngStyle]="msgStyle" [hidden]="hideMsg">
+      {{message}}
+    </div>
+
+    <button type="submit" class="btn btn-success"
+            [disabled]="requestForm.invalid || numOfBedSelected == null" *ngIf="!isDivisionCompleted">Submit</button>
+
+  </form>
+
+  <div class="bed-selection" *ngIf="!isDivisionCompleted" >
+
+    <h3>Available beds in your division:</h3>
+    <h4 [hidden]="numOfBedSelected == null">You selected bed {{numOfBedSelected}}</h4>
+    <div class="row">
+      <div *ngFor="let availableBed of availableBeds">
+        <div class="bedInfo col">
+          <button class="bed-selection-btn btn btn-dark" (click)="selectBed(availableBed)"></button>
+          bed {{availableBed}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+<div class="waitinglist-selection" *ngIf="isDivisionCompleted">
+  <h3>No bed available in your division, send your request to waiting list</h3>
+  <button type="submit" class="btn btn-success" [disabled]="requestForm.invalid" (click)="sendRequest()"> Send </button>
+</div>
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+</body>
+</html>

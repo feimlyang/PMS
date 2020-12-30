@@ -1,0 +1,31 @@
+<body>
+
+<div class="alert alert-danger" role="alert" *ngIf="message">
+  {{ message }}
+</div>
+
+<div class="container" *ngIf="!isLoggedIn">
+
+  <div class="login">
+    <p id="login">
+    <h1>PMS Login</h1>
+    <form method="post">
+      <input type="text" required="required" placeholder="User Name" name="username" [(ngModel)]="username">
+      <input type="password" required="required" placeholder="Password" name="password" [(ngModel)]="password">
+      <button (click)=checkLogin() class="but" type="submit">Login</button>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="well" *ngIf="isLoggedIn">
+
+  <p>Logged in as a <b>{{ loggedUser }}</b></p>
+  <button (click)=logout() class="btn btn-danger">
+    Log out
+  </button>
+
+</div>
+
+</body>

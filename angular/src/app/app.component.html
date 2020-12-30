@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PMS</title>
+</head>
+
+<body>
+
+
+<div class="nav-fill">
+  <div class="nav-link">
+    <div class="navbar-brand float-lg-left  ">Patients Management System</div>
+    <a [routerLink]="['/home']">Home</a>
+    <a [routerLink]="['/patients']">Search</a>
+    <a [routerLink]="['/user']">Register</a>
+    <a [routerLink]="['/admit']">Admit</a>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+</body>
+

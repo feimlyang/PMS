@@ -1,0 +1,18 @@
+.container {
+  margin-top: 50px;
+  position: absolute;
+  margin-right: 500px;
+}
+
+.container h4{
+  font-weight: bolder;
+  margin-left: 80px;
+}
+
+.table{
+  table-layout: fixed;
+  width:80%;
+  margin-left:100px
+}
+
+

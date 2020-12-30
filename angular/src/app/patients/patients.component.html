@@ -1,0 +1,17 @@
+<body>
+
+<div class="container" *ngIf="!isLogin">
+  <h2>Please Log In First </h2>
+</div>
+
+<div class="search" *ngIf="isLogin">
+  <label for="insuranceNum"> Searching registered Patient: </label>
+  <input  class="search-txt" type="text" #patientQuery id="insuranceNum" placeholder="search patient">
+  <button  class="search-btn" (click)="submit(patientQuery.value)">Search </button>
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+</body>

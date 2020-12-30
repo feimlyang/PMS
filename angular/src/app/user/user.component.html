@@ -1,0 +1,164 @@
+<body>
+
+  <div class="add" *ngIf="!isClickedAdd">
+    <button (click)=clickAdd()> + Add Patient </button>
+  </div>
+
+
+  <div class="container" *ngIf="isClickedAdd">
+
+    <h4 class="mb-3">Register New Patient</h4>
+  <form [formGroup]="patientForm"  (ngSubmit)="onSubmit()">
+
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="insuranceNum">Insurance Number:</label>
+      <input type="text" class="form-control form-control-sm" id="insuranceNum"  formControlName="insuranceNum" required>
+      <div [hidden]="insuranceNum.pristine || insuranceNum.valid"
+           class="alert alert-danger">
+        Insurance Number must be 9 digits long starting with a number different from 0.
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="externalDocId">External Doctor ID:</label>
+      <input type="text" class="form-control form-control-sm" id="externalDocId" required formControlName="externalDocId">
+      <div [hidden]="externalDocId.pristine || externalDocId.valid"
+           class="alert alert-danger">
+        Phone Number must be 6 digits long starting with a number different from 0.
+      </div>
+    </div>
+    </div>
+
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="firstName">First Name:</label>
+      <input type="text" class="form-control form-control-sm" id="firstName"  formControlName="firstName">
+      <div [hidden]="firstName.pristine || firstName.valid"
+           class="alert alert-danger">
+        First Name is required.
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="lastName">Last Name:</label>
+      <input type="text" class="form-control form-control-sm" id="lastName" required formControlName="lastName">
+      <div [hidden]="lastName.pristine || lastName.valid"
+           class="alert alert-danger">
+        Last Name is required.
+      </div>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address">address:</label>
+      <input type="text" class="form-control form-control-sm" id="address" required formControlName="address">
+      <div [hidden]="address.pristine || address.valid"
+           class="alert alert-danger">
+        Address is required.
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+      <label for="phone">phone:</label>
+      <input type="text" class="form-control form-control-sm" id="phone" required formControlName="phone">
+      <div [hidden]="phone.pristine || phone.valid"
+           class="alert alert-danger">
+        Phone Number must be 9 digits long starting with a number different from 0.
+      </div>
+    </div>
+
+      <div class="form-group col-md-6">
+      <label for="birthDate">birthDate:</label>
+      <input type="text" class="form-control form-control-sm" id="birthDate" required formControlName="birthDate">
+      <div [hidden]="birthDate.pristine || birthDate.valid"
+           class="alert alert-danger">
+        Birth Date is required.
+      </div>
+    </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+      <label for="gender">gender:</label>
+      <input type="text" class="form-control form-control-sm" id="gender" required formControlName="gender">
+      <div [hidden]="gender.pristine || gender.valid"
+           class="alert alert-danger">
+        Gender is required to be <b>Male</b>or <b>Female</b>
+      </div>
+    </div>
+
+      <div class="form-group col-md-6">
+      <label for="marital">marital:</label>
+      <input type="text" class="form-control form-control-sm" id="marital" required formControlName="marital">
+      <div [hidden]="marital.pristine || marital.valid"
+           class="alert alert-danger">
+        Marital is required to be <b>Single</b>, <b>Married</b>, <b>Widowed</b>or <b>Divorced</b>
+      </div>
+    </div>
+    </div>
+
+    <h5 class="mb-3">Fill out the information of the next-of-kin of patient</h5>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nokfirstName">First Name:</label>
+        <input type="text" class="form-control form-control-sm" id="nokfirstName"  formControlName="nokfirstName">
+        <div [hidden]="nokfirstName.pristine || nokfirstName.valid"
+             class="alert alert-danger">
+          First Name is required.
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="noklastName">Last Name:</label>
+        <input type="text" class="form-control form-control-sm" id="noklastName" required formControlName="noklastName">
+        <div [hidden]="noklastName.pristine || noklastName.valid"
+             class="alert alert-danger">
+          Last Name is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nokrelationship">Relationship:</label>
+        <input type="text" class="form-control form-control-sm" id="nokrelationship"  formControlName="nokrelationship">
+        <div [hidden]="nokrelationship.pristine || nokrelationship.valid"
+             class="alert alert-danger">
+          Relationship is required.
+        </div>
+      </div>
+
+
+      <div class="form-group col-md-6">
+        <label for="nokphone">phone:</label>
+        <input type="text" class="form-control form-control-sm" id="nokphone" required formControlName="nokphone">
+        <div [hidden]="nokphone.pristine || nokphone.valid"
+             class="alert alert-danger">
+          Phone Number must be 10 digits long starting with a number different from 0.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nokaddress">address:</label>
+      <input type="text" class="form-control form-control-sm" id="nokaddress" required formControlName="nokaddress">
+      <div [hidden]="nokaddress.pristine || nokaddress.valid"
+           class="alert alert-danger">
+        Address is required.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="patientForm.invalid">Submit</button>
+  </form>
+  </div>
+
+  <div [ngStyle]="msgStyle" [hidden]="hideMsg">
+    {{message}}
+  </div>
+
+</body>
+
+
+
